@@ -37,8 +37,6 @@ In all other cases the input should be either (1) a vector or (2) a single-colum
 
 **NOTE:** for a list of gene IDs/names, an additional file is required that indicates which basepair positions are spanned by the genes
 
-This file can be obtained from Perline or Hill
-
 ### add.windows
 As indicated by Finucane et al (2015; 2018), it is sometimes proper to add so-called window-annotations around your main annotations. The argument accepts:
 - an integer
