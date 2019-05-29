@@ -14,7 +14,7 @@ This function requires at least 5 arguments:
 - template.dir=directory containing existing annotation files
 - input.type=c("rs","id","name","bp","pos")
 
-Other arguments include:
+Other accepted arguments:
 - sep=separator for the chromosome-basepair positions
 - add.windows=add window-annotations (see below)
 - GeneCode=reference file (see below)
