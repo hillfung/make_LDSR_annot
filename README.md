@@ -5,6 +5,9 @@ There are two ways to create a new annotation:
 1. specifying a set of SNPs to include
 2. collapse existing annotations
 
+## Requirements
+The function requires the `data.table`-package to be installed in R
+
 ## Getting started
 Clone this repository and:
 1. run `script_get_reference_file.sh` (optional)
