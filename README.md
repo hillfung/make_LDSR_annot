@@ -2,7 +2,9 @@
 Collection of R functions to create annotations for analysis using stratified LDSC
 
 ## Getting started
-Clone this repository and source `make.LDSR.annot.R` in R
+Clone this repository and:
+1. run `script_get_reference_file.sh`
+2. source `make.LDSR.annot.R` in R
 
 ## Creating the annotation
 To create an annotation, run the `make.LDSR.annot()`-function
@@ -36,6 +38,8 @@ For a list of CHR:BP ranges, the input must be a three-column data.frame with th
 In all other cases the input should be either (1) a vector or (2) a single-column data.frame or matrix
 
 **NOTE:** for a list of gene IDs/names, an additional file is required that indicates which basepair positions are spanned by the genes
+
+This file can be created by running `script_get_reference_file.sh`
 
 ### add.windows
 As indicated by Finucane et al (2015; 2018), it is sometimes proper to add so-called window-annotations around your main annotations. The argument accepts:
