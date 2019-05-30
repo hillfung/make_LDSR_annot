@@ -18,4 +18,4 @@ sed 's!^chr!!g' < gencode.v19.annotation.third_selected_columns.gtf > gencode.v1
 sed 's!"!!g' < gencode.v19.annotation.third_selected_columns.numeric_chr.gtf > gencode.v19.annotation.third_selected_columns.numeric_chr.no_quotes.gtf
 
 ## add header
-echo -e "CHR\tSTART\tEND\tSTRAND\tGENE_ID\tGENE_NAME" | cat - gencode.v19.annotation.third_selected_columns.numeric_chr.no_quotes.gtf > gencode_v19_genes_only.tab
+echo -e "CHROMOSOME\tSTART\tEND\tSTRAND\tGENE_ID\tGENE_NAME" | cat - gencode.v19.annotation.third_selected_columns.numeric_chr.no_quotes.gtf > gencode_v19_genes_only.tab
