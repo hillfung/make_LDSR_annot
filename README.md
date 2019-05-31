@@ -65,6 +65,8 @@ This argument is used to indicate which **OBJECT** is the reference file that in
 - START
 - END
 
+**NOTE:** the object may contain more columns than required as long as the column names of the relevant columns match exactly with what is shown above
+
 ### gene.shoulder
 When using genes as input, it is often prudent to extend the genes with a certain range (see [Finucane et al, 2018](https://doi-org.vu-nl.idm.oclc.org/10.1038/s41588-018-0081-4)). `gene.shoulder` accepts a single integer as input.
 
