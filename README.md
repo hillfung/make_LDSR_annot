@@ -52,7 +52,7 @@ This file can be created by running `script_get_reference_file.sh`
 Use this argument to indicate where the templates are located. For example, `template.dir="/home/user/my_annotations/foo"` results in the function using `foo.[1-22].annot.gz` as templates for the new annotation.
 
 ### add.windows
-As indicated by [Finucane et al (2015)](https://doi.org/10.1038/ng.3404), it is sometimes proper to add so-called window-annotations around your main annotations. The argument accepts:
+As indicated by [Finucane et al (2015)](https://doi.org/10.1038/ng.3404), it is sometimes proper to add additional so-called window-annotations next to your main annotation. The window annotation includes all SNPs that are part of the main annotation and every SNP that is within a specific BP-window from these SNPs. The argument accepts:
 - an integer
 - a vector of integers
 - T(RUE)=add 100 and 500bp windows
@@ -66,7 +66,11 @@ This argument is used to indicate which **OBJECT** is the reference file that in
 - END
 
 ### gene.shoulder
-When using genes as input, it is often prudent to extend the genes with a certain range on **BOTH ENDS** (see [Finucane et al, 2018](https://doi-org.vu-nl.idm.oclc.org/10.1038/s41588-018-0081-4)). `gene.shoulder` accepts a single integer as input
+When using genes as input, it is often prudent to extend the genes with a certain range (see [Finucane et al, 2018](https://doi-org.vu-nl.idm.oclc.org/10.1038/s41588-018-0081-4)). `gene.shoulder` accepts a single integer as input.
+
+**Note:** this is different from specifying windows: `add.windows=100` will return a file with two annotations: the main annotation and a 100-BP window, whereas `gene.shoulder=100` returns one annotation where the ranges as specified by `GeneCode` are extended with 100 BP **on both sides** of the gene. 
+
+**NOTE:** if both `add.windows` and `gene.shoulder` are specified, gene ranges will first be extended and windows will be made based on the extended ranges
 
 ## 2. collapse existing annotations
 Use the `collapse.annots()`-function to combine multiple annotations into a single annotation. You can choose to do one of two things:
