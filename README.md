@@ -1,6 +1,8 @@
 # make_LDSR_annot (v: 2.4.6)
 Collection of R functions to create annotations for analysis using stratified LDSC
 
+**NOTE:** the R-functions only create the annotation-files, you still need to convert the annotation-files to LDscores (see: https://github.com/bulik/ldsc/wiki/LD-Score-Estimation-Tutorial )  
+
 There are two ways to create a new annotation:
 1. specifying a set of SNPs to include
 2. collapse existing annotations
@@ -42,6 +44,7 @@ For a list of CHR:BP ranges, the input must be a three-column data.frame with th
 - CHR
 - START
 - END
+
 In all other cases the input should be either (1) a vector or (2) a single-column data.frame or matrix
 
 **NOTE:** for a list of gene IDs/names, an additional file is required that indicates which basepair positions are spanned by the genes (see below). This file can be created by running `script_get_reference_file.sh`
@@ -91,7 +94,13 @@ Optional argument:
 ### annot.dir
 The value supplied to this argument should be a (vector of) strings. For example: `annot.dir=c("/home/user/my_annotations/foo","/home/user/my_annotations/bar")` indicates that `foo.[1-22].annot.gz` and `bar.[1-22].annot.gz` will be included in the new annotation.
 
-Optionally, the value may be a directory and all annotations inside the annotation will be collapsed into the new annotation.
+Alternatively, the value may be a directory, e.g. `annot.dir="/home/user/my_annotations/"` (note the trailing slash!), and all annotations inside the annotation will be collapsed into the new annotation.
 
 ## Output
-Both functions produce 22 files called <annot.name>.[1-22].annot.gz
+Both functions return:
+- 22 files called <annot.name>.[1-22].annot.gz
+- <annot.name>.log
+
+`make.LDSR.annot()` further returns:
+- <annot.name>.included: list of SNPs/genes that were included in the new annotation
+- <annot.name>.excluded: list of SNPs/genes that were excluded from the new annotation (if applicable)
